@@ -1,7 +1,16 @@
+;; edit this file with F2 F2
+(defun open-init-file()
+  (interactive)
+  (find-file "~/.emacs.d/my_init.org"))
+(global-set-key (kbd "<f2><f2>") 'open-init-file)
+
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
-; (fset 'yes-or-no-p 'y-or-n-p)
-(global-set-key (kbd "<f5>") 'revert-buffer)
+;; (fset 'yes-or-no-p 'y-or-n-p)
+
+(global-auto-revert-mode 1)
+;; (setq auto-revert-verbose nil) ;;message for auto revert
+;; (global-set-key (kbd "<f5>") 'revert-buffer)
 (require 'org-tempo)
 
 (use-package try
@@ -37,6 +46,10 @@
 
 (use-package counsel
   :ensure t
+  :bind
+  (("M-y" . counsel-yank-pop)
+   :map ivy-minibuffer-map
+   ("M-y" . ivy-next-line))
   )
 
 (use-package swiper
@@ -122,3 +135,5 @@
 
 (use-package iedit
   :ensure t)
+
+(setq save-interprogram-paste-before-kill t)
