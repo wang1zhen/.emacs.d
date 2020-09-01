@@ -197,5 +197,3 @@ Not working, why?
 
     (setq save-interprogram-paste-before-kill t)
   #+end_src
-
-
