@@ -86,6 +86,7 @@
   (delete-other-windows)
   (noflet ((switch-to-buffer-other-window (buf) (switch-to-buffer buf)))
           (org-capture)))
+;; bind make-capture-frame to some key in the system shortcut
 
 ; (setq ido-enable-flex-matching t)
 ; (setq ido-everywhere t)

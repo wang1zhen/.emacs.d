@@ -100,7 +100,7 @@
 #+END_SRC
 
 * ido
-replaced by 
+replaced by ibuffer
 #+BEGIN_SRC emacs-lisp
   ; (setq ido-enable-flex-matching t)
   ; (setq ido-everywhere t)
