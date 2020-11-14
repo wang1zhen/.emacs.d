@@ -208,7 +208,10 @@ replaced by company
 #+END_SRC
 * company
 #+begin_src emacs-lisp
-  (add-hook 'after-init-hook 'global-company-mode)
+  (use-package company
+    :ensure t
+    :config
+    (add-hook 'after-init-hook 'global-company-mode))
 #+end_src
 * theme
 #+BEGIN_SRC emacs-lisp
