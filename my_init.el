@@ -16,6 +16,9 @@
 ;; (global-set-key (kbd "<f5>") 'revert-buffer)
 (require 'org-tempo)
 
+;; share system clipboard
+(setq x-select-enable-clipboard t)
+
 (use-package try
 	     :ensure t)
 
@@ -159,7 +162,10 @@
 ;;    (global-auto-complete-mode t)
 ;;    ))
 
-(add-hook 'after-init-hook 'global-company-mode)
+(use-package company
+  :ensure t
+  :config
+  (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package atom-one-dark-theme
   :ensure t
@@ -189,6 +195,10 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 10)
+
+(put 'dired-find-alternate-file 'disabled nil)
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
 (global-hl-line-mode t)
 
