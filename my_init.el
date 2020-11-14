@@ -6,6 +6,9 @@
 
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
+(global-linum-mode 1)
+(set-face-attribute 'default nil :height 140)
 ;; (fset 'yes-or-no-p 'y-or-n-p)
 
 (global-auto-revert-mode 1)
@@ -148,13 +151,15 @@
   :config
   (global-set-key (kbd "M-s") 'avy-goto-char))
 
-(use-package auto-complete
-  :ensure t
-  :init
-  (progn
-    (ac-config-default)
-    (global-auto-complete-mode t)
-    ))
+;;(use-package auto-complete
+;;  :ensure t
+;;  :init
+;;  (progn
+;;    (ac-config-default)
+;;    (global-auto-complete-mode t)
+;;    ))
+
+(add-hook 'after-init-hook 'global-company-mode)
 
 (use-package atom-one-dark-theme
   :ensure t
@@ -180,6 +185,10 @@
   :ensure t
   :init
   (global-undo-tree-mode))
+
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 10)
 
 (global-hl-line-mode t)
 

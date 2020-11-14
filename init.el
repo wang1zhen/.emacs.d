@@ -22,7 +22,7 @@
  '(org-startup-folded 'overview)
  '(org-startup-indented t)
  '(package-selected-packages
-   '(iedit expand-region hungry-delete beacon undo-tree yasnippet jedi flycheck use-package try tabbar org-bullets counsel color-theme-modern auto-complete atom-one-dark-theme ace-window)))
+   '(company iedit expand-region hungry-delete beacon undo-tree yasnippet jedi flycheck use-package try tabbar org-bullets counsel color-theme-modern auto-complete atom-one-dark-theme ace-window)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

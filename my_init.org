@@ -19,6 +19,9 @@
   ;; (setq auto-revert-verbose nil) ;;message for auto revert
   ;; (global-set-key (kbd "<f5>") 'revert-buffer)
   (require 'org-tempo)
+
+  ;; share system clipboard
+  (setq x-select-enable-clipboard t)
 #+END_SRC
 
 * try
@@ -193,16 +196,20 @@ bind to "M-s"
 #+END_SRC
 
 * auto complete
+replaced by company
 #+BEGIN_SRC emacs-lisp
-  (use-package auto-complete
-    :ensure t
-    :init
-    (progn
-      (ac-config-default)
-      (global-auto-complete-mode t)
-      ))
+  ;;(use-package auto-complete
+  ;;  :ensure t
+  ;;  :init
+  ;;  (progn
+  ;;    (ac-config-default)
+  ;;    (global-auto-complete-mode t)
+  ;;    ))
 #+END_SRC
-
+* company
+#+begin_src emacs-lisp
+  (add-hook 'after-init-hook 'global-company-mode)
+#+end_src
 * theme
 #+BEGIN_SRC emacs-lisp
   (use-package atom-one-dark-theme
@@ -241,6 +248,18 @@ Not working, why?
       :init
       (global-undo-tree-mode))
   #+end_src
+* recentf
+#+begin_src emacs-lisp
+  (require 'recentf)
+  (recentf-mode 1)
+  (setq recentf-max-menu-items 10)
+#+end_src
+* dired
+#+begin_src emacs-lisp
+  (put 'dired-find-alternate-file 'disabled nil)
+  (with-eval-after-load 'dired
+    (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+#+end_src
 * misc packages
   #+begin_src emacs-lisp
     (global-hl-line-mode t)
