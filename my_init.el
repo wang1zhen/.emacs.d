@@ -163,13 +163,15 @@
 ;;    ))
 
 (use-package company
-  :ensure t
-  :config
-  (add-hook 'after-init-hook 'global-company-mode))
+    :ensure t
+    :config
+    (add-hook 'after-init-hook 'global-company-mode)
+    (setq company-idle-delay 1)
+)
 
-(use-package atom-one-dark-theme
+(use-package dracula-theme
   :ensure t
-  :config (load-theme 'atom-one-dark t))
+  :config (load-theme 'dracula t))
 
 ; (use-package flycheck
 ;   :ensure t
@@ -196,9 +198,13 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 10)
 
+;; use current buffer when entering new directory
 (put 'dired-find-alternate-file 'disabled nil)
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+
+;; C-x C-j to enter current directory
+(require 'dired-x)
 
 (global-hl-line-mode t)
 

@@ -208,10 +208,12 @@ replaced by company
 #+END_SRC
 * company
 #+begin_src emacs-lisp
-  (use-package company
-    :ensure t
-    :config
-    (add-hook 'after-init-hook 'global-company-mode))
+    (use-package company
+      :ensure t
+      :config
+      (add-hook 'after-init-hook 'global-company-mode)
+      (setq company-idle-delay 1)
+  )
 #+end_src
 * theme
 #+BEGIN_SRC emacs-lisp
@@ -266,6 +268,16 @@ Not working, why?
 
   ;; C-x C-j to enter current directory
   (require 'dired-x)
+#+end_src
+* lorem-ipsum
+C-c l p for paragraphs
+C-c l s for sentences
+C-c l l for list
+#+begin_src emacs-lisp
+  (use-package lorem-ipsum
+    :ensure t
+    :config
+    (lorem-ipsum-use-default-bindings))
 #+end_src
 * misc packages
   #+begin_src emacs-lisp
