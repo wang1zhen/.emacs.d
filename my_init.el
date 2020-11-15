@@ -206,6 +206,11 @@
 ;; C-x C-j to enter current directory
 (require 'dired-x)
 
+(use-package lorem-ipsum
+  :ensure t
+  :config
+  (lorem-ipsum-use-default-bindings))
+
 (global-hl-line-mode t)
 
 (use-package beacon
