@@ -251,8 +251,7 @@ Type in abbrev and automatically expand into templates.
     (use-package yasnippet
       :ensure t
       :config
-      (yas-reload-all)
-      (add-hook 'prog-mode-hook #'yas-minor-mode))
+      (yas-global-mode 1))
   #+end_src
 * undo tree
   #+begin_src emacs-lisp
