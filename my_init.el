@@ -22,10 +22,10 @@
 (use-package try
 	     :ensure t)
 
-(use-package org-bullets
-             :ensure t
-             :config
-             (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+(use-package org-superstar
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
 (custom-set-variables
  '(org-directory "~/Dropbox/orgfiles")
@@ -117,6 +117,8 @@
 		  ((t (:inherit ace-jump-face-foreground :height 3.0)))))
 	       ))
 
+(setq ivy-use-selectable-prompt t)
+
 (use-package counsel
   :ensure t
   :bind
@@ -146,7 +148,7 @@
     (global-set-key (kbd "C-c k") 'counsel-ag)
     (global-set-key (kbd "C-x l") 'counsel-locate)
     (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-    (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+    (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
     ))
 
 (use-package avy
@@ -184,10 +186,11 @@
 ;   (add-hook 'python-mode-hook 'jedi:setup)
 ;   (add-hook 'python-mode-hook 'jedi:ac-setup))
 
-; (use-package yasnippet
-;   :ensure t
-;   :init
-;   (yas-global-mode 1))
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-reload-all)
+  (add-hook 'prog-mode-hook #'yas-minor-mode))
 
 (use-package undo-tree
   :ensure t

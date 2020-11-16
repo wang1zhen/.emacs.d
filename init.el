@@ -9,7 +9,8 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(org-babel-load-file (expand-file-name "~/.emacs.d/my_init.org"))
+(org-babel-load-file (expand-file-name "my_init.org" user-emacs-directory))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -22,7 +23,7 @@
  '(org-startup-folded 'overview)
  '(org-startup-indented t)
  '(package-selected-packages
-   '(lorem-ipsum dracula-theme company iedit expand-region hungry-delete beacon undo-tree yasnippet jedi flycheck use-package try tabbar org-bullets counsel color-theme-modern auto-complete atom-one-dark-theme ace-window)))
+   '(org-superstar lorem-ipsum dracula-theme company iedit expand-region hungry-delete beacon undo-tree yasnippet jedi flycheck use-package try tabbar org-bullets counsel color-theme-modern auto-complete atom-one-dark-theme ace-window)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

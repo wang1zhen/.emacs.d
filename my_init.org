@@ -32,10 +32,10 @@
 
 * org
 #+BEGIN_SRC emacs-lisp
-  (use-package org-bullets
-               :ensure t
-               :config
-               (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (use-package org-superstar
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
   (custom-set-variables
    '(org-directory "~/Dropbox/orgfiles")
@@ -245,12 +245,14 @@ disabled for now
     ;   (add-hook 'python-mode-hook 'jedi:ac-setup))
   #+end_src
 * yasnippet
-Not working, why?
+A template system for Emacs.
+Type in abbrev and automatically expand into templates.
   #+begin_src emacs-lisp
-    ; (use-package yasnippet
-    ;   :ensure t
-    ;   :init
-    ;   (yas-global-mode 1))
+    (use-package yasnippet
+      :ensure t
+      :config
+      (yas-reload-all)
+      (add-hook 'prog-mode-hook #'yas-minor-mode))
   #+end_src
 * undo tree
   #+begin_src emacs-lisp
