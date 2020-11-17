@@ -19,6 +19,24 @@
 ;; share system clipboard
 (setq x-select-enable-clipboard t)
 
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-want-C-u-scroll t)
+  :config
+  (evil-mode 1)
+  )
+
+(use-package evil-leader
+  :ensure t
+  :config
+  (global-evil-leader-mode)
+  (evil-leader/set-leader "<SPC>")
+  (evil-leader/set-key
+   "ff" 'find-file
+   "bb" 'switch-to-buffer
+   "bk" 'kill-buffer))
+
 (use-package try
 	     :ensure t)
 
