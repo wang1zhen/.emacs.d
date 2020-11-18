@@ -8,7 +8,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (global-linum-mode 1)
-(set-face-attribute 'default nil :height 140)
+(set-face-attribute 'default nil :height 140 :font "Cascadia Code PL")
 ;; (fset 'yes-or-no-p 'y-or-n-p)
 
 (global-auto-revert-mode 1)
