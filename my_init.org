@@ -320,14 +320,15 @@ Type in abbrev and automatically expand into templates.
   (require 'dired-x)
 #+end_src
 * lorem-ipsum
+key binding conflict, suspended
 C-c l p for paragraphs
 C-c l s for sentences
 C-c l l for list
 #+begin_src emacs-lisp
-  (use-package lorem-ipsum
-    :ensure t
-    :config
-    (lorem-ipsum-use-default-bindings))
+  ;; (use-package lorem-ipsum
+  ;;   :ensure t
+  ;;   :config
+  ;;   (lorem-ipsum-use-default-bindings))
 #+end_src
 * misc packages
   #+begin_src emacs-lisp

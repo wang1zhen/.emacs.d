@@ -37,6 +37,18 @@
    "bb" 'switch-to-buffer
    "bk" 'kill-buffer))
 
+(use-package evil-nerd-commenter
+  :ensure t
+  :config
+  (evilnc-default-hotkeys)
+  (define-key evil-normal-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
+  (define-key evil-visual-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines))
+
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
+
 (use-package try
 	     :ensure t)
 
@@ -226,10 +238,10 @@
 ;; C-x C-j to enter current directory
 (require 'dired-x)
 
-(use-package lorem-ipsum
-  :ensure t
-  :config
-  (lorem-ipsum-use-default-bindings))
+;; (use-package lorem-ipsum
+;;   :ensure t
+;;   :config
+;;   (lorem-ipsum-use-default-bindings))
 
 (global-hl-line-mode t)
 
